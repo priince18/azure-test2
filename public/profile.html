@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h3>Profile</h3>
+
+<p id="user"></p>
+
+<script>
+  const p = new URLSearchParams(location.search);
+  document.getElementById("user").innerHTML =
+    "Name: " + p.get("name") + "<br>Email: " + p.get("email");
+</script>
+</body>
+</html>
