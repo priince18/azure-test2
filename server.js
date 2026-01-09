@@ -1,16 +1,30 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const sql = require("mssql");
-
+require("dotenv").config();
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-/* ✅ Azure App Service SQL connection */
 const dbConfig = {
-  connectionString: process.env.AZURE_SQL_CONNECTIONSTRING
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  server: process.env.DB_SERVER,
+  port: 1433,
+  options: {
+    encrypt: true,
+    trustServerCertificate: false
+  }
 };
 
+sql.connect(dbConfig)
+  .then(() => console.log("✅ Azure SQL Connected"))
+  .catch(err => console.error("❌ DB Error:", err));
+
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/public/home.html");
+});
 /* -------- SIGNUP -------- */
 app.post("/signup", async (req, res) => {
   const { name, email, password } = req.body;
