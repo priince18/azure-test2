@@ -6,17 +6,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-const dbConfig = {
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-  server: process.env.DB_SERVER,
-  port: 1433,
-  options: {
-    encrypt: true,
-    trustServerCertificate: false
-  }
-};
+const dbConfig = process.env.DefaultConnection ;
 
 sql.connect(dbConfig)
   .then(() => console.log("✅ Azure SQL Connected"))
