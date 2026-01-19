@@ -1,4 +1,8 @@
 {
     "appService.defaultWebAppToDeploy": "/subscriptions/442db285-44db-450f-ba1b-60cf0282cebb/resourceGroups/appsvc_linux_centralindia/providers/Microsoft.Web/sites/node-app",
-    "appService.deploySubpath": "."
+    "appService.deploySubpath": ".",
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ]
 }

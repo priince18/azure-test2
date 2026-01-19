@@ -15,5 +15,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/priince18/azure-test2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/priince18/azure-test2/issues"
+  },
+  "homepage": "https://github.com/priince18/azure-test2#readme",
   "description": ""
 }
