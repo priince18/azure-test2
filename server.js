@@ -85,6 +85,6 @@ app.post("/login", async (req, res) => {
 });
 
 /* -------- SERVER -------- */
-app.listen(process.env.AZURE_SQL_PORT || 3000, () => {
+app.listen(3000, () => {
   console.log("Server running");
 });
