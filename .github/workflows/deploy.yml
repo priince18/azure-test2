@@ -26,4 +26,4 @@ jobs:
           docker stop node-app || true
           docker rm node-app || true
           docker build -t node-app .
-          docker run -d -p 3000:3000 --name node-app node-app
+          docker run -d -p 3000:3000 --name node-container node-app
